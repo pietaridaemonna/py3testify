@@ -1,3 +1,5 @@
+from py3Testify.core import TestSuite
+
 class TestPlan(object):
     """
     high level support for doing this and that.
@@ -8,15 +10,10 @@ class TestPlan(object):
         high level support for doing this and that.
         """
         self.name = name
+        self.suites = []
 
-    def add_test_suite(self):
+    def add_test_suite(self, suite):
         """
-        add new TestCase
-        """
-        print('destroying  ' + self.name)
-
-    def add_test_case(self):
-            """
         add new TestCase
         """
         print('destroying  ' + self.name)

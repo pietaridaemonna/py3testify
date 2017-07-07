@@ -14,9 +14,3 @@ class TestSuite(object):
         add new TestCase
         """
         print('destroying  ' + self.name)
-
-    def add_test_case(self):
-            """
-        add new TestCase
-        """
-        print('destroying  ' + self.name)
