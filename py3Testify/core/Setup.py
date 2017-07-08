@@ -6,20 +6,11 @@ class Setup(object):
     This may involve, for example, creating temporary or proxy databases, directories, or starting a server process.
     """
 
-    def __init__(self, name):
+    def __init__(self, name, values):
         """
         high level support for doing this and that.
         """
         self.name = name
+        self.values = values
 
-    def add_test_suite(self):
-        """
-        add new TestCase
-        """
-        print('destroying  ' + self.name)
 
-    def add_test_case(self):
-            """
-        add new TestCase
-        """
-        print('destroying  ' + self.name)

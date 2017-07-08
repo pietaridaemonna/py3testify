@@ -8,15 +8,20 @@ class TestStep(object):
         high level support for doing this and that.
         """
         self.name = name
+        self.command = 'n/a'
+        self.type = 'shell'
+        print('TestStep  ' + self.name)
 
-    def add_test_suite(self):
+    def set_command(self, comm):
         """
         add new TestCase
         """
-        print('destroying  ' + self.name)
+        self.command = comm
+        print('command  ' + self.comm)
 
-    def add_test_case(self):
-            """
+    def set_type(self, type):
+        """
         add new TestCase
         """
-        print('destroying  ' + self.name)
+        self.type = type
+        print('type  ' + self.type)

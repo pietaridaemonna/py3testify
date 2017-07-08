@@ -1,31 +1,26 @@
-from py3Testify.core import TestSuite
+from py3Testify.core.TestSuite import TestSuite
+
 
 class TestPlan(object):
     """
     high level support for doing this and that.
     """
 
-    def __init__(self, name):
+    def __init__(self, name, description):
         """
         high level support for doing this and that.
         """
         self.name = name
+        self.description = description
         self.suites = []
+        print('|' + self.name)
 
     def add_test_suite(self, suite):
         """
         add new TestCase
         """
-        print('destroying  ' + self.name)
+        sut = TestSuite(suite.name)
+        self.suites.append(sut)
 
-    def add_setup(self):
-        """
-        add new TestCase
-        """
-        print('destroying  ' + self.name)
+        #print(self.name + ' adding test_suite  ' + suite.name)
 
-    def add_teardown(self):
-        """
-        add new TestCase
-        """
-        print('destroying  ' + self.name)

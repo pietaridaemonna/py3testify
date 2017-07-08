@@ -1,3 +1,6 @@
+from py3Testify.core.TestStep import TestStep
+
+
 class TestCase(object):
     """
     high level support for doing this and that.
@@ -9,15 +12,17 @@ class TestCase(object):
         """
         self.name = name
         self.status = 'none'
+        self.test_steps = []
+        print('|---- ' + self.name)
 
-    def add_test_suite(self):
+    def add_test_step(self, name, type, command):
         """
         add new TestCase
         """
-        print('destroying  ' + self.name)
+        step = TestStep(name)
+        step.set_command(command)
+        step.set_type(type)
 
-    def add_test_case(self):
-            """
-        add new TestCase
-        """
-        print('destroying  ' + self.name)
+        self.test_steps.append(step)
+        #print(self.name + ' add_test_step  ' + self.name)
+
