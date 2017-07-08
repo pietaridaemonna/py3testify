@@ -9,14 +9,3 @@ class PreConditions(object):
         """
         self.name = name
 
-    def add_test_suite(self):
-        """
-        add new TestCase
-        """
-        print('destroying  ' + self.name)
-
-    def add_test_case(self):
-            """
-        add new TestCase
-        """
-        print('destroying  ' + self.name)

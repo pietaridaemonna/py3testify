@@ -27,12 +27,7 @@ tsp.add_test_suite(sut)
 tsp.add_test_suite(sut2)
 
 
-class MyEncoder(JSONEncoder):
-    def default(self, o):
-        return o.__dict__
-
-tspson = MyEncoder().encode(tsp)
-print(tspson)
+print(tsp)
 
 
 

@@ -15,6 +15,9 @@ class TestSuite(object):
         self.setup = {}
         self.teardown = {}
 
+    def __repr__(self):
+        return "\n  Suite name:%s \n   test_cases:%s \n    setup:%s>" % (self.name, self.test_cases, self.setup)
+
     def add_test_case(self, case):
         """
         add new TestCase

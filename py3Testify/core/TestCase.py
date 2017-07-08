@@ -14,6 +14,9 @@ class TestCase(object):
         self.status = 'none'
         self.test_steps = {}
 
+    def __repr__(self):
+        return "<Test a:%s b:%s c:%s>" % (self.name, self.status, self.test_steps)
+
     def add_test_step(self, name, type, command):
         """
         add new TestCase

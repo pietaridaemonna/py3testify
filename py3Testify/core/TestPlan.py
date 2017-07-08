@@ -14,6 +14,9 @@ class TestPlan(object):
         self.description = description
         self.suites = {}
 
+    def __repr__(self):
+        return "<Plan name:%s \ndescription:%s \nsuites:%s>" % (self.name, self.description, self.suites)
+
     def add_test_suite(self, suite):
         """
         add new TestCase
