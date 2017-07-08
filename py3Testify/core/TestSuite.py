@@ -11,15 +11,13 @@ class TestSuite(object):
         high level support for doing this and that.
         """
         self.name = name
-        self.test_cases = []
-        self.setup = []
-        self.teardown = []
-        print('|-- ' + self.name)
+        self.test_cases = {}
+        self.setup = {}
+        self.teardown = {}
 
     def add_test_case(self, case):
         """
         add new TestCase
         """
         cas = TestCase(case.name)
-        self.test_cases.append(cas)
-        print(self.name + ' adding test_case  ' + cas.name)
+        self.test_cases['case'] = cas

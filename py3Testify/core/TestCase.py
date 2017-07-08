@@ -12,8 +12,7 @@ class TestCase(object):
         """
         self.name = name
         self.status = 'none'
-        self.test_steps = []
-        print('|---- ' + self.name)
+        self.test_steps = {}
 
     def add_test_step(self, name, type, command):
         """
@@ -23,6 +22,6 @@ class TestCase(object):
         step.set_command(command)
         step.set_type(type)
 
-        self.test_steps.append(step)
-        #print(self.name + ' add_test_step  ' + self.name)
+        self.test_steps['step'] = step
+
 

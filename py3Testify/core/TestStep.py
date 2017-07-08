@@ -10,18 +10,15 @@ class TestStep(object):
         self.name = name
         self.command = 'n/a'
         self.type = 'shell'
-        print('TestStep  ' + self.name)
 
     def set_command(self, comm):
         """
         add new TestCase
         """
         self.command = comm
-        print('command  ' + self.comm)
 
     def set_type(self, type):
         """
         add new TestCase
         """
         self.type = type
-        print('type  ' + self.type)

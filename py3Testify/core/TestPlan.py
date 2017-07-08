@@ -12,15 +12,13 @@ class TestPlan(object):
         """
         self.name = name
         self.description = description
-        self.suites = []
-        print('|' + self.name)
+        self.suites = {}
 
     def add_test_suite(self, suite):
         """
         add new TestCase
         """
         sut = TestSuite(suite.name)
-        self.suites.append(sut)
+        self.suites['suite'] = sut
 
-        #print(self.name + ' adding test_suite  ' + suite.name)
 
