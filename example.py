@@ -5,6 +5,10 @@ from py3Testify.core import TestPlan, TestSuite, TestCase
 from json import JSONEncoder
 import json
 
+import colors
+print(colors.red('this is red'))
+print(colors.green('this is green'))
+
 tsp = TestPlan('new testplan1', 'some descr')
 
 sut = TestSuite('ping_suite')
