@@ -24,7 +24,7 @@ if __name__ == "__main__":
     main()
     print(colors.red('[localhost]'))
     sh = ConnectorSsh()
-    sh.connect_to('myname', 'XXX', 'uname -n')
+    sh.connect_to('myuser', 'myhost', 'uname -n')
 
 
 
