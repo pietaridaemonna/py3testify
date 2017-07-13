@@ -17,7 +17,7 @@ class TestPlan(object):
         self.suites = []
 
     def __repr__(self):
-        return "[{\n    \"name\":\"%s\" \n    \"description\":\"%s\" \n    \"suites\":%s\n}]" \
+        return "[{\n    \"name\":\"%s\",\n    \"description\":\"%s\",\n    \"suites\":%s\n}]" \
                % (self.name, self.description, self.suites)
 
     def add_test_suite(self, suite):
