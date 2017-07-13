@@ -1,7 +1,5 @@
-from py3Testify.core.TestStep import TestStep
 
-
-class TestCase(object):
+class TestData(object):
     """
     high level support for doing this and that.
     """
@@ -12,22 +10,17 @@ class TestCase(object):
         """
         self.name = name
         self.description = descr
-        self.status = 'none'
-        self.test_steps = []
+        self.data = []
 
     def __repr__(self):
         return "\n                     { \n                     " \
                "\"name\":\"%s\" ,\n                     " \
                "\"description\":\"%s\" ,\n                     " \
-               "\"status\":\"%s\" ,\n                     " \
-               "\"test_steps\":%s \n                      }" % \
-               (self.name, self.description, self.status, self.test_steps)
+               "\"data\":%s \n                      }" % \
+               (self.name, self.description, self.data)
 
     def add_test_step(self, step):
         """
         add new TestCase
         """
         self.test_steps.append(step)
-
-
-
