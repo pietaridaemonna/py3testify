@@ -12,7 +12,9 @@ class TestStep(object):
         self.type = _type
 
     def __repr__(self):
-        return "\n                     { \"name\":\"%s\" ,\n                    " \
-               "\"command\":%s,\n                    type:%s \n}" % \
+        return "\n                             { \n                              " \
+               "\"name\":\"%s\" ,\n                              " \
+               "\"command\":%s,\n                              " \
+               "\"type\":\"%s\" \n                              }" % \
                (self.name, self.command, self.type)
 

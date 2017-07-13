@@ -16,7 +16,9 @@ class TestCase(object):
         self.test_steps = []
 
     def __repr__(self):
-        return "\n                     { \"name\":\"%s\" ,\n                        test_steps:%s \n}" % \
+        return "\n                     { \n                     " \
+               "\"name\":\"%s\" ,\n                     " \
+               "\"test_steps\":%s \n                      }" % \
                (self.name, self.test_steps)
 
     def add_test_step(self, step):
