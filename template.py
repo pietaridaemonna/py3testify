@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
-import argparse, colors
+import argparse
+import colors
 from py3Testify.connectors.ConnectorSSH import ConnectorSsh
 
 

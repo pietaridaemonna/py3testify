@@ -6,22 +6,25 @@ class TestSuite(object):
     high level support for doing this and that.
     """
 
-    def __init__(self, name):
+    def __init__(self, name, descr):
         """
         high level support for doing this and that.
         """
         self.name = name
-        self.test_cases = {}
+        self.description = descr
+        self.test_cases = []
         self.setup = {}
         self.teardown = {}
 
     def __repr__(self):
-        return "\n         { \"name\":\"%s\" \n        test_cases:%s \n        setup:%s]" % \
-               (self.name, self.test_cases, self.setup)
+        return "\n              {\n               \"name\":\"%s\"," \
+               "\n               \"description\":\"%s\",\n               \"test" \
+               "_cases\":%s,\n               \"setup\":%s,\n               \"teardown\":%s\n              }" % \
+               (self.name, self.description, self.test_cases, self.setup, self.teardown)
 
     def add_test_case(self, case):
         """
         add new TestCase
         """
-        cas = TestCase(case.name)
-        self.test_cases['case'] = cas
+        self.test_cases.append(case)
+

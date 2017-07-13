@@ -4,6 +4,7 @@ import sys
 import time
 import paramiko
 import os
+import colors
 
 
 class ConnectorSsh(object):
@@ -13,9 +14,9 @@ class ConnectorSsh(object):
         self.i = 1
 
     def connect_to(self, user, host, command):
-        client = {}
+
         while True:
-            print("connecting to %s (%i/30)" % (host, self.i))
+            print("connecting to %s (%i/10)" % (host, self.i))
 
             try:
                 client = paramiko.SSHClient()
@@ -41,8 +42,15 @@ class ConnectorSsh(object):
                 client.connect(**cfg)
                 # execute command
                 stdin, stdout, stderr = client.exec_command(command)
-                print('STDOUT: ' + stdout.read().decode('utf-8'))
-                print('STDERR: ' + stderr.read().decode('utf-8'))
+                out = stdout.read().decode('utf-8')
+                err = stderr.read().decode('utf-8')
+                #print('OUT:'+out+' ERR:'+err)
+
+                if not out:
+                    print(colors.red('STDERR: ' + err))
+                else:
+                    print(colors.green('STDOUT: ' + out))
+
                 break
             except paramiko.AuthenticationException:
                 print("Authentication failed when connecting to %s" % host)
@@ -53,7 +61,7 @@ class ConnectorSsh(object):
                 time.sleep(2)
 
             # If we could not connect within time limit
-            if self.i == 30:
+            if self.i == 10:
                 print
                 "Could not connect to %s. Giving up" % host
                 sys.exit(1)

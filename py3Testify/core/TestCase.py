@@ -6,25 +6,24 @@ class TestCase(object):
     high level support for doing this and that.
     """
 
-    def __init__(self, name):
+    def __init__(self, name, descr):
         """
         high level support for doing this and that.
         """
         self.name = name
+        self.description = descr
         self.status = 'none'
-        self.test_steps = {}
+        self.test_steps = []
 
     def __repr__(self):
-        return "<Test a:%s b:%s c:%s>" % (self.name, self.status, self.test_steps)
+        return "\n                     { \"name\":\"%s\" ,\n                        test_steps:%s \n}" % \
+               (self.name, self.test_steps)
 
-    def add_test_step(self, name, type, command):
+    def add_test_step(self, step):
         """
         add new TestCase
         """
-        step = TestStep(name)
-        step.set_command(command)
-        step.set_type(type)
+        self.test_steps.append(step)
 
-        self.test_steps['step'] = step
 
 

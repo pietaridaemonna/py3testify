@@ -12,7 +12,9 @@ class TestPlan(object):
         """
         self.name = name
         self.description = description
-        self.suites = {}
+        self.owner = 'owner'
+        self.version = '1'
+        self.suites = []
 
     def __repr__(self):
         return "[{\n    \"name\":\"%s\" \n    \"description\":\"%s\" \n    \"suites\":%s\n}]" \
@@ -22,7 +24,6 @@ class TestPlan(object):
         """
         add new TestCase
         """
-        sut = TestSuite(suite.name)
-        self.suites['suite'] = sut
+        self.suites.append(suite)
 
 

@@ -3,22 +3,16 @@ class TestStep(object):
     high level support for doing this and that.
     """
 
-    def __init__(self, name):
+    def __init__(self, name, _type, command):
         """
         high level support for doing this and that.
         """
         self.name = name
-        self.command = 'n/a'
-        self.type = 'shell'
+        self.command = command
+        self.type = _type
 
-    def set_command(self, comm):
-        """
-        add new TestCase
-        """
-        self.command = comm
+    def __repr__(self):
+        return "\n                     { \"name\":\"%s\" ,\n                    " \
+               "\"command\":%s,\n                    type:%s \n}" % \
+               (self.name, self.command, self.type)
 
-    def set_type(self, type):
-        """
-        add new TestCase
-        """
-        self.type = type

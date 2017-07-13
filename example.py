@@ -1,32 +1,32 @@
 #!/usr/bin/python3
 
 
-from py3Testify.core import TestPlan, TestSuite, TestCase
-from json import JSONEncoder
-import json
+from py3Testify.core import TestPlan, TestSuite, TestCase, TestStep
 
 import colors
-print(colors.red('this is red'))
-print(colors.green('this is green'))
 
-tsp = TestPlan('new testplan1', 'some descr')
 
-sut = TestSuite('ping_suite')
-sut2 = TestSuite('echo_suite')
+stp1 = TestStep('step1', 'shell', 'uname -a')
 
-st1 = TestCase('st1')
-st2 = TestCase('st2')
-st3 = TestCase('st3')
+st1 = TestCase('st1','dessdkjf')
+st2 = TestCase('st2','dessdkjf')
+st3 = TestCase('st3','dessdkjf')
 
+st1.add_test_step(stp1)
+
+sut = TestSuite('ping_suite','lets ping something')
+sut2 = TestSuite('echo_suite','echo hello world')
 
 sut.add_test_case(st1)
 sut2.add_test_case(st2)
 sut2.add_test_case(st3)
 
+tsp = TestPlan('new testplan1', 'some descr')
+
 tsp.add_test_suite(sut)
 tsp.add_test_suite(sut2)
 
-
+print(colors.red('printing test plan'))
 print(tsp)
 
 
